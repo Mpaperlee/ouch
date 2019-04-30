@@ -1,6 +1,6 @@
 
-R version 3.4.1 (2017-06-30) -- "Single Candle"
-Copyright (C) 2017 The R Foundation for Statistical Computing
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -27,7 +27,7 @@ Loading required package: ape
 > tree.1 <- ape2ouch(tree)
 > toc <- Sys.time()
 > print(toc-tic)
-Time difference of 0.2957935 secs
+Time difference of 0.1880271 secs
 > tree.data <- merge(
 +                    as(tree.1,"data.frame"),
 +                    squam.data,
@@ -54,7 +54,7 @@ Time difference of 0.2957935 secs
 > h4 <- hansen(data=tree.data['log.SVL.SE'],tree.2,tree.data['OU2'],sqrt.alpha=0.5,sigma=1,fit=F)
 > toc <- Sys.time()
 > print(toc-tic)
-Time difference of 0.202184 secs
+Time difference of 0.3060322 secs
 > model.fits <- c(h1,h2,h3,h4)
 > names(model.fits) <- c("BM.1","BM.2","OU2.1","OU2.2")
 > sapply(model.fits,function(x)c(unlist(coef(x)),summary(x)$aic.c))
